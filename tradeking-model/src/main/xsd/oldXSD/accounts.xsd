@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="response" type="AccountsResponse"></xs:element>
+
+  <xs:complexType name="AccountsResponse">
+    <xs:sequence>
+      <xs:element name="elapsedtime" type="xs:int"></xs:element>
+      <xs:element name="accounts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="accountsummary" type="AccountSummary" minOccurs="0" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="error" type="xs:string"></xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+
+  <xs:complexType name="BuyingPower">
+    <xs:sequence>
+      <xs:element type="xs:double" name="cashavailableforwithdrawal"/>
+      <xs:element type="xs:double" name="daytrading"/>
+      <xs:element type="xs:byte" name="equitypercentage"/>
+      <xs:element type="xs:double" name="options"/>
+      <xs:element type="xs:double" name="soddaytrading"/>
+      <xs:element type="xs:double" name="sodoptions"/>
+      <xs:element type="xs:double" name="sodstock"/>
+      <xs:element type="xs:double" name="stock"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Money">
+    <xs:sequence>
+      <xs:element type="xs:double" name="accruedinterest"/>
+      <xs:element type="xs:double" name="cash"/>
+      <xs:element type="xs:double" name="cashavailable"/>
+      <xs:element type="xs:double" name="marginbalance"/>
+      <xs:element type="xs:double" name="mmf"/>
+      <xs:element type="xs:double" name="total"/>
+      <xs:element type="xs:double" name="uncleareddeposits"/>
+      <xs:element type="xs:double" name="unsettledfunds"/>
+      <xs:element type="xs:double" name="yield"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Securities">
+    <xs:sequence>
+      <xs:element type="xs:double" name="longoptions"/>
+      <xs:element type="xs:double" name="longstocks"/>
+      <xs:element type="xs:double" name="options"/>
+      <xs:element type="xs:double" name="shortoptions"/>
+      <xs:element type="xs:double" name="shortstocks"/>
+      <xs:element type="xs:double" name="stocks"/>
+      <xs:element type="xs:double" name="total"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccountBalance">
+    <xs:sequence>
+      <xs:element type="xs:int" name="account"/>
+      <xs:element type="xs:double" name="accountvalue"/>
+      <xs:element name="buyingpower" type="BuyingPower"></xs:element>
+      <xs:element type="xs:double" name="fedcall"/>
+      <xs:element type="xs:double" name="housecall"/>
+      <xs:element name="money" type="Money"></xs:element>
+      <xs:element name="securities" type="Securities"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccountHoldingsDisplayData">
+    <xs:sequence>
+      <xs:element type="xs:string" name="totalsecurities"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HoldingDisplayData">
+    <xs:sequence>
+      <xs:element type="xs:string" name="accounttype"/>
+      <xs:element type="xs:string" name="assetclass"/>
+      <xs:element type="xs:string" name="change"/>
+      <xs:element type="xs:string" name="costbasis"/>
+      <xs:element type="xs:string" name="desc"/>
+      <xs:element type="xs:string" name="lastprice"/>
+      <xs:element type="xs:string" name="marketvalue"/>
+      <xs:element type="xs:string" name="marketvaluechange"/>
+      <xs:element type="xs:byte" name="qty"/>
+      <xs:element type="xs:string" name="symbol"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Instrument">
+    <xs:sequence>
+      <xs:element type="xs:string" name="cusip"/>
+      <xs:element type="xs:string" name="desc"/>
+      <xs:element type="xs:double" name="factor"/>
+      <xs:element type="xs:string" name="sectyp"/>
+      <xs:element type="xs:string" name="sym"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Quote">
+    <xs:sequence>
+      <xs:element type="xs:double" name="change"/>
+      <xs:element type="xs:double" name="lastprice"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Holding">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="accounttype"/>
+      <xs:element type="xs:double" name="costbasis"/>
+      <xs:element name="displaydata" type="HoldingDisplayData"></xs:element>
+      <xs:element type="xs:double" name="gainloss"/>
+      <xs:element name="instrument" type="Instrument"></xs:element>
+      <xs:element type="xs:double" name="marketvalue"/>
+      <xs:element type="xs:double" name="marketvaluechange"/>
+      <xs:element type="xs:double" name="price"/>
+      <xs:element type="xs:double" name="purchaseprice"/>
+      <xs:element type="xs:double" name="qty"/>
+      <xs:element name="quote" type="Quote"></xs:element>
+      <xs:element type="xs:string" name="underlying"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccountHoldings">
+    <xs:sequence>
+      <xs:element name="displaydata" type="AccountHoldingsDisplayData"></xs:element>
+      <xs:element name="holding" type="Holding" maxOccurs="unbounded" minOccurs="0"></xs:element>
+      <xs:element type="xs:double" name="totalsecurities"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="AccountSummary">
+    <xs:sequence>
+      <xs:element type="xs:int" name="account"/>
+      <xs:element name="accountbalance" type="AccountBalance"></xs:element>
+      <xs:element name="accountholdings" type="AccountHoldings"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

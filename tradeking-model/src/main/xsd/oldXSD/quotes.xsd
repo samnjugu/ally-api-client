@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:element name="response" type="QuotesResponse"></xs:element>
+
+  <xs:complexType name="QuotesResponse">
+    <xs:sequence>
+      <xs:element name="elapsedtime" type="xs:int"></xs:element>
+      <xs:element name="quotes">
+        <xs:complexType>
+          <xs:sequence>
+	    <xs:element name="quote" type="Quote" minOccurs="0" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="error" type="xs:string"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Quote">
+    <xs:sequence>
+      <xs:element type="xs:string" name="adp_100"/>
+      <xs:element type="xs:string" name="adp_200"/>
+      <xs:element type="xs:string" name="adp_50"/>
+      <xs:element type="xs:string" name="adv_21"/>
+      <xs:element type="xs:string" name="adv_30"/>
+      <xs:element type="xs:string" name="adv_90"/>
+      <xs:element type="xs:double" name="ask"/>
+      <xs:element type="xs:string" name="ask_time"/>
+      <xs:element type="xs:byte" name="asksz"/>
+      <xs:element type="xs:string" name="basis"/>
+      <xs:element type="xs:string" name="beta"/>
+      <xs:element type="xs:double" name="bid"/>
+      <xs:element type="xs:string" name="bid_time"/>
+      <xs:element type="xs:byte" name="bidsz"/>
+      <xs:element type="xs:string" name="bidtick"/>
+      <xs:element type="xs:double" name="chg"/>
+      <xs:element type="xs:string" name="chg_sign"/>
+      <xs:element type="xs:string" name="chg_t"/>
+      <xs:element type="xs:double" name="cl"/>
+      <xs:element type="xs:string" name="contract_size"/>
+      <xs:element type="xs:string" name="cusip"/>
+      <xs:element type="xs:date" name="date"/>
+      <xs:element type="xs:dateTime" name="datetime"/>
+      <xs:element type="xs:string" name="days_to_expiration"/>
+      <xs:element type="xs:string" name="div"/>
+      <xs:element type="xs:string" name="divexdate"/>
+      <xs:element type="xs:string" name="divfreq"/>
+      <xs:element type="xs:string" name="divpaydt"/>
+      <xs:element type="xs:double" name="dollar_value"/>
+      <xs:element type="xs:string" name="eps"/>
+      <xs:element type="xs:string" name="exch"/>
+      <xs:element type="xs:string" name="exch_desc"/>
+      <xs:element type="xs:double" name="hi"/>
+      <xs:element type="xs:string" name="iad"/>
+      <xs:element type="xs:string" name="idelta"/>
+      <xs:element type="xs:string" name="igamma"/>
+      <xs:element type="xs:string" name="imp_volatility"/>
+      <xs:element type="xs:byte" name="incr_vl"/>
+      <xs:element type="xs:string" name="irho"/>
+      <xs:element type="xs:string" name="issue_desc"/>
+      <xs:element type="xs:string" name="itheta"/>
+      <xs:element type="xs:string" name="ivega"/>
+      <xs:element type="xs:double" name="last"/>
+      <xs:element type="xs:double" name="lo"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="op_delivery"/>
+      <xs:element type="xs:byte" name="op_flag"/>
+      <xs:element type="xs:string" name="op_style"/>
+      <xs:element type="xs:string" name="op_subclass"/>
+      <xs:element type="xs:string" name="openinterest"/>
+      <xs:element type="xs:double" name="opn"/>
+      <xs:element type="xs:string" name="opt_val"/>
+      <xs:element type="xs:double" name="pchg"/>
+      <xs:element type="xs:string" name="pchg_sign"/>
+      <xs:element type="xs:double" name="pcls"/>
+      <xs:element type="xs:string" name="pe"/>
+      <xs:element type="xs:double" name="phi"/>
+      <xs:element type="xs:double" name="plo"/>
+      <xs:element type="xs:double" name="popn"/>
+      <xs:element type="xs:string" name="pr_adp_100"/>
+      <xs:element type="xs:string" name="pr_adp_200"/>
+      <xs:element type="xs:string" name="pr_adp_50"/>
+      <xs:element type="xs:date" name="pr_date"/>
+      <xs:element type="xs:string" name="pr_openinterest"/>
+      <xs:element type="xs:string" name="prbook"/>
+      <xs:element type="xs:double" name="prchg"/>
+      <xs:element type="xs:string" name="prem_mult"/>
+      <xs:element type="xs:string" name="put_call"/>
+      <xs:element type="xs:byte" name="pvol"/>
+      <xs:element type="xs:byte" name="qcond"/>
+      <xs:element type="xs:string" name="rootsymbol"/>
+      <xs:element type="xs:byte" name="secclass"/>
+      <xs:element type="xs:string" name="sesn"/>
+      <xs:element type="xs:string" name="sho"/>
+      <xs:element type="xs:string" name="strikeprice"/>
+      <xs:element type="xs:string" name="symbol"/>
+      <xs:element type="xs:byte" name="tcond"/>
+      <xs:element type="xs:int" name="timestamp"/>
+      <xs:element type="xs:int" name="tr_num"/>
+      <xs:element type="xs:string" name="tradetick"/>
+      <xs:element type="xs:string" name="trend"/>
+      <xs:element type="xs:string" name="under_cusip"/>
+      <xs:element type="xs:string" name="undersymbol"/>
+      <xs:element type="xs:int" name="vl"/>
+      <xs:element type="xs:string" name="volatility12"/>
+      <xs:element type="xs:string" name="vwap"/>
+      <xs:element type="xs:double" name="wk52hi"/>
+      <xs:element type="xs:int" name="wk52hidate"/>
+      <xs:element type="xs:double" name="wk52lo"/>
+      <xs:element type="xs:int" name="wk52lodate"/>
+      <xs:element type="xs:string" name="xdate"/>
+      <xs:element type="xs:string" name="xday"/>
+      <xs:element type="xs:string" name="xmonth"/>
+      <xs:element type="xs:string" name="xyear"/>
+      <xs:element type="xs:string" name="yield"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

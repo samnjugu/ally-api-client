@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response id="47d37ee5-9134-47e2-8c77-7922ccf93f6a">
+  <elapsedtime>0</elapsedtime>
+  <date>2016-07-18 18:31:34.2506852-04:00</date>
+  <status>
+    <current>close</current>
+    <next>pre</next>
+    <change_at>08:00:00</change_at>
+  </status>
+  <message>Market is open Monday through Friday 9:30AM to 4:00PM EST</message>
+  <unixtime>1468884694.25069</unixtime>
+  <error>Success</error>
+</response>

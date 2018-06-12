@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:element name="response" type="OrderResponse"></xs:element>
+
+  <xs:complexType name="Warning">
+    <xs:sequence>
+      <xs:element name="warningcode" type="xs:int"></xs:element>
+      <xs:element name="warningtext" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InstrumentQuoteDisplayData">
+    <xs:sequence>
+      <xs:element name="accounttype" type="xs:string"/>
+      <xs:element name="assetclass" type="xs:string"/>
+      <xs:element name="costbasis" type="xs:string"/>
+      <xs:element name="marketvalue" type="xs:string"/>
+      <xs:element name="marketvaluechange" type="xs:string"/>
+      <xs:element name="qty" type="xs:int"/>
+      <xs:element name="askprice" type="xs:double"></xs:element>
+      <xs:element name="asksize" type="xs:string"></xs:element>
+      <xs:element name="bidprice" type="xs:double"></xs:element>
+      <xs:element name="bidsize" type="xs:string"></xs:element>
+      <xs:element name="change" type="xs:double"></xs:element>
+      <xs:element name="contracthigh"></xs:element>
+      <xs:element name="contractlow"></xs:element>
+      <xs:element name="contractsize"></xs:element>
+      <xs:element name="delta"></xs:element>
+      <xs:element name="desc" type="xs:string"></xs:element>
+      <xs:element name="dividendamount" type="xs:int"></xs:element>
+      <xs:element name="dividendexdate" type="xs:date"></xs:element>
+      <xs:element name="dividendpaydate"></xs:element>
+      <xs:element name="dividendyield" type="xs:string"></xs:element>
+      <xs:element name="earningspershare" type="xs:double"></xs:element>
+      <xs:element name="exch" type="xs:string"></xs:element>
+      <xs:element name="expiry"></xs:element>
+      <xs:element name="gamma"></xs:element>
+      <xs:element name="high52price" type="xs:double"></xs:element>
+      <xs:element name="highprice" type="xs:double"></xs:element>
+      <xs:element name="impvolatility"></xs:element>
+      <xs:element name="lastclosingprice" type="xs:double"></xs:element>
+      <xs:element name="lastprice" type="xs:double"></xs:element>
+      <xs:element name="low52price" type="xs:double"></xs:element>
+      <xs:element name="lowprice" type="xs:double"></xs:element>
+      <xs:element name="nav"></xs:element>
+      <xs:element name="openinterest"></xs:element>
+      <xs:element name="openprice" type="xs:double"></xs:element>
+      <xs:element name="optval"></xs:element>
+      <xs:element name="optiontype"></xs:element>
+      <xs:element name="pctchange" type="xs:string"></xs:element>
+      <xs:element name="priceearningsratio" type="xs:int"></xs:element>
+      <xs:element name="rho"></xs:element>
+      <xs:element name="sessionvolume" type="xs:string"></xs:element>
+      <xs:element name="strike"></xs:element>
+      <xs:element name="symbol" type="xs:string"></xs:element>
+      <xs:element name="theta"></xs:element>
+      <xs:element name="unknownsymbol" type="xs:string"></xs:element>
+      <xs:element name="vega"></xs:element>
+      <xs:element name="volatility"></xs:element>
+      <xs:element name="volume" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Instrument">
+    <xs:sequence>
+      <xs:element name="cusip" type="xs:string"/>
+      <xs:element name="factor" type="xs:float"/>
+      <xs:element name="desc" type="xs:string"></xs:element>
+      <xs:element name="exch" type="xs:string"></xs:element>
+      <xs:element name="sectyp" type="xs:string"></xs:element>
+      <xs:element name="sym" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DividendData">
+    <xs:sequence>
+      <xs:element name="amt" type="xs:double"></xs:element>
+      <xs:element name="exdate" type="xs:dateTime"></xs:element>
+      <xs:element name="paydate" type="xs:dateTime"></xs:element>
+      <xs:element name="yield" type="xs:double"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ExtendedQuote">
+    <xs:sequence>
+      <xs:element name="asksize" type="xs:int"></xs:element>
+      <xs:element name="bidsize" type="xs:int"></xs:element>
+      <xs:element name="dividenddata" type="DividendData"></xs:element>
+      <xs:element name="earningspershare" type="xs:double"></xs:element>
+      <xs:element name="high52price" type="xs:double"></xs:element>
+      <xs:element name="highprice" type="xs:double"></xs:element>
+      <xs:element name="low52price" type="xs:double"></xs:element>
+      <xs:element name="lowprice" type="xs:double"></xs:element>
+      <xs:element name="openprice" type="xs:double"></xs:element>
+      <xs:element name="prevclose" type="xs:double"></xs:element>
+      <xs:element name="priceearningsratio" type="xs:int"></xs:element>
+      <xs:element name="sessionvolume" type="xs:int"></xs:element>
+      <xs:element name="volume" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Quote">
+    <xs:sequence>
+      <xs:element name="askprice" type="xs:double"></xs:element>
+      <xs:element name="bidprice" type="xs:double"></xs:element>
+      <xs:element name="change" type="xs:double"></xs:element>
+      <xs:element name="extendedquote" type="ExtendedQuote"></xs:element>
+      <xs:element name="lastprice" type="xs:double"></xs:element>
+      <xs:element name="pctchange" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InstrumentQuote">
+    <xs:sequence>
+      <xs:element name="displaydata" type="InstrumentQuoteDisplayData"></xs:element>
+      <xs:element name="greeks"></xs:element>
+      <xs:element name="instrument" type="Instrument"></xs:element>
+      <xs:element name="quote" type="Quote"></xs:element>
+      <xs:element name="unknownsymbol" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Quotes">
+    <xs:sequence>
+      <xs:element name="instrumentquote" type="InstrumentQuote"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OrderResponse">
+    <xs:sequence>
+      <xs:element name="warning" type="Warning"></xs:element>
+      <xs:element name="estcommission" type="xs:double"></xs:element>
+      <xs:element name="marginrequirement" type="xs:int"></xs:element>
+      <xs:element name="netamt" type="xs:double"></xs:element>
+      <xs:element name="principal" type="xs:double"></xs:element>
+      <xs:element name="quotes" type="Quotes"></xs:element>
+      <xs:element name="secfee" type="xs:int"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+</xs:schema>

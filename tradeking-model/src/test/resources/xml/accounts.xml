@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><response id="a9361682-bf75-4923-9068-4299e9f6e4ed"><elapsedtime>0</elapsedtime>
+<accounts>
+  <accountsummary>
+    <account>88963310</account>
+    <accountbalance>
+      <account>88963310</account>
+      <accountvalue>285072.75</accountvalue>
+      <buyingpower />
+      <fedcall>0</fedcall>
+      <housecall>0</housecall>
+      <money>
+        <accruedinterest>0</accruedinterest>
+        <cash>871.45</cash>
+        <cashavailable>871.450000000012</cashavailable>
+        <marginbalance>0</marginbalance>
+        <mmf>0</mmf>
+        <total>871.45</total>
+        <uncleareddeposits>0</uncleareddeposits>
+        <unsettledfunds>0</unsettledfunds>
+        <yield>0</yield>
+      </money>
+      <securities>
+        <longoptions>0</longoptions>
+        <longstocks>284201.3</longstocks>
+        <options>0</options>
+        <shortoptions>0</shortoptions>
+        <shortstocks>0</shortstocks>
+        <stocks>284201.3</stocks>
+        <total>284201.3</total>
+      </securities>
+    </accountbalance>
+    <accountholdings>
+      <displaydata>
+        <totalsecurities>$284,201.30</totalsecurities>
+      </displaydata>
+      <holding>
+        <accounttype>1</accounttype>
+        <costbasis>284253.5</costbasis>
+        <displaydata>
+          <accounttype>Cash</accounttype>
+          <assetclass>Stock</assetclass>
+          <change>$.00</change>
+          <costbasis>$284,253.50</costbasis>
+          <desc>CREDIT SUISSE NASSAU BRH</desc>
+          <lastprice>$29.39</lastprice>
+          <marketvalue>$284,201.30</marketvalue>
+          <marketvaluechange>$96.70</marketvaluechange>
+          <qty>9670</qty>
+          <symbol>XIV</symbol>
+        </displaydata>
+        <gainloss>-52.2000000000116</gainloss>
+        <instrument>
+          <cfi />
+          <cusip>22542D795</cusip>
+          <desc>CREDIT SUISSE NASSAU BRH</desc>
+          <factor>0</factor>
+          <matdt>0001-01-01T00:00:00-05:00</matdt>
+          <mult>0</mult>
+          <putcall>0</putcall>
+          <sectyp>CS</sectyp>
+          <strkpx>0</strkpx>
+          <sym>XIV</sym>
+        </instrument>
+        <marketvalue>284201.3</marketvalue>
+        <marketvaluechange>96.7000000000116</marketvaluechange>
+        <price>29.39</price>
+        <purchaseprice>29.3953981385729</purchaseprice>
+        <qty>9670</qty>
+        <quote>
+          <change>0</change>
+          <extendedquote>
+            <dividenddata />
+          </extendedquote>
+          <format />
+          <lastprice>29.39</lastprice>
+        </quote>
+        <sodcostbasis>0</sodcostbasis>
+        <underlying />
+      </holding>
+      <totalsecurities>284201.3</totalsecurities>
+    </accountholdings>
+  </accountsummary>
+</accounts><error>Success</error></response>

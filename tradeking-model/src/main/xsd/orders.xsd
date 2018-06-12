@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:element name="response" type="OrdersResponse"></xs:element>
+
+  <xs:complexType name="OrdersResponse">
+    <xs:sequence>
+      <xs:element name="orderstatus" minOccurs="0" maxOccurs="unbounded" type="OrderStatus"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="OrderStatus">
+    <xs:sequence>
+      <xs:element name="order" type="FIXMLMessage"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FIXMLMessage">
+    <xs:sequence>
+      <xs:element name="fixmlmessage" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
