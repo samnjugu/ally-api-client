@@ -113,9 +113,9 @@
       <xs:element type="xs:double" name="wk52lo"/>
       <xs:element type="xs:int" name="wk52lodate"/>
       <xs:element type="xs:double" name="xdate"/>
-      <xs:element type="xs:double" name="xday"/>
-      <xs:element type="xs:double" name="xmonth"/>
-      <xs:element type="xs:double" name="xyear"/>
+      <xs:element type="xs:int" name="xday"/>
+      <xs:element type="xs:int" name="xmonth"/>
+      <xs:element type="xs:int" name="xyear"/>
       <xs:element type="xs:double" name="yield"/>
     </xs:sequence>
   </xs:complexType>

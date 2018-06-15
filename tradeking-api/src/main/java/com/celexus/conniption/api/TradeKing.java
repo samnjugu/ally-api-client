@@ -42,7 +42,7 @@ public class TradeKing {
 	 * Build an API call, send it to Ally, get a clock response and unmarshal it to
 	 * clock schema.
 	 * 
-	 * @return
+	 * @return ClockResponse object. Check XSD for more info of what method is available.
 	 */
 	public ClockResponse clock() {
 		return get(MarketBuilder.getClock(ResponseFormat.XML), null, "com.celexus.conniption.model.clock",
@@ -53,7 +53,7 @@ public class TradeKing {
 	 * Build an API call, send it to Ally, get an account response and unmarshal it
 	 * to account schema.
 	 * 
-	 * @return
+	 * @return AccountsResponse  object. Check XSD for more info of what method is available.
 	 */
 	public AccountsResponse accounts() {
 		return get(AccountsBuilder.getAccounts(ResponseFormat.XML), null, "com.celexus.conniption.model.accounts",
@@ -65,7 +65,7 @@ public class TradeKing {
 	 * 
 	 * @param accountId
 	 * @param fixml
-	 * @return
+	 * @return OrderResponse  object. Check XSD for more info of what method is available.
 	 */
 	public OrderResponse preview(String accountId, String fixml) {
 		return get(OrdersBuilder.preview(accountId, fixml, ResponseFormat.XML), null,
@@ -78,7 +78,7 @@ public class TradeKing {
 	 * 
 	 * @param accountId
 	 * @param fixml
-	 * @return
+	 * @return OrderResponse object  object. Check XSD for more info of what method is available.
 	 */
 	public OrderResponse order(String accountId, String fixml) {
 		return get(OrdersBuilder.postOrder(accountId, fixml, ResponseFormat.XML), null,
@@ -90,7 +90,7 @@ public class TradeKing {
 	 * unmarshal them to orders schema.
 	 * 
 	 * @param accountId
-	 * @return
+	 * @return OrdersResponse object, unmarshalled to XSD. 
 	 */
 	public OrdersResponse orders(String accountId) {
 		return get(OrdersBuilder.getOrders(accountId, ResponseFormat.XML), null, "com.celexus.conniption.model.orders",
@@ -121,7 +121,7 @@ public class TradeKing {
 	 * 
 	 * @param symbols
 	 *            list of stock symbols
-	 * @return
+	 * @return QuotesResponse object. Check XSD for more info of what method is available.
 	 */
 	public QuotesResponse quotes(String[] symbols, String... fields) {
 		return get(MarketBuilder.getQuotes(ResponseFormat.XML, symbols, fields), null,
@@ -143,7 +143,7 @@ public class TradeKing {
 	 * @param clazz
 	 *            name of class to unmarshal, depends on what kind of call you are
 	 *            using.
-	 * @return
+	 * @return an object of a given type that has data unmarshalled into XSD schema.
 	 */
 	private <T> T get(APIBuilder builder, String root, String packageName, Class<T> clazz) {
 		try {

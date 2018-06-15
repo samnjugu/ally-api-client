@@ -42,7 +42,7 @@ public class JAXBUtils {
 	 * feed and virtual tab. Then call getElement() method. This step tries to
 	 * reduce the chance that JAXB unmarshaller will thow error.
 	 * 
-	 * Usually return a list of Class<T> that has been unmarshalled into XML format.
+	 * Usually return data that has been unmarshalled into XML format.
 	 * <br>
 	 * This method is used in getting quote and also in streaming. The response of
 	 * streaming is different from quote.
@@ -51,10 +51,10 @@ public class JAXBUtils {
 	 *            fully qualified package name
 	 * @param response
 	 *            TKResponse object converted to String.
-	 * @param root
-	 * @param clazz
-	 * @return
-	 * @throws Exception
+	 * @param root not implemented at this time.
+	 * @param clazz class object generated from XSD schema.
+	 * @return an object that contains data unmarshalled into XSD schema.
+	 * @throws Exception JAXB exceptions.
 	 */
 	static public <T> T getElement(String packageName, String response, String root, Class<T> clazz) throws Exception {
 		log.trace(response);
@@ -67,21 +67,21 @@ public class JAXBUtils {
 
 	/**
 	 * Parse the XML response into Document, then unmarshal it using an XML format
-	 * class and return a JAXBElement<T>. If there is error, the handler will print
+	 * class and return a JAXBElement object. If there is error, the handler will print
 	 * the errors.
 	 * 
-	 * @param <T>
+	 * @param <T> any object created by XSD schemas
 	 * 
 	 * @param source
 	 *            XML string wrapped in InputSource object.
 	 * @param path
 	 *            fully qualified package name of clazz
-	 * @param root
+	 * @param root at this point, root is always null so there is no implementation yet.
 	 * @param clazz
 	 *            a class created using XSD schema. Can be used to get the variable
 	 *            "path" if there are multiple objects in the same package.
-	 * @return
-	 * @throws Exception
+	 * @return an object that contains XML data already unmarshalled into XSD.
+	 * @throws Exception various exception when unmarshalling fail.
 	 */
 	static public <T> T getElement(InputSource source, String path, String root, Class<T> clazz) throws Exception {
 		// these two lines are interchangeable
