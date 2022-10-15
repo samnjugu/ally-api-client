@@ -331,7 +331,7 @@ public class FIXMLBuilder {
 	    .priceType(PriceType.MARKET)
 	    .symbol(symbol)
 	    .quantity(quantity)
-	    .timeInForce(TimeInForceField.GOOD_TIL_CANCELED);
+	    .timeInForce(TimeInForceField.DAY_ORDER);
 	return builder;
     }
 
@@ -403,7 +403,7 @@ public class FIXMLBuilder {
 	    .priceType(PriceType.MARKET)
 	    .symbol(symbol)
 	    .quantity(quantity)
-	    .timeInForce(TimeInForceField.GOOD_TIL_CANCELED);
+	    .timeInForce(TimeInForceField.DAY_ORDER);
 	return builder;
     }
 
