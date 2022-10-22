@@ -2,13 +2,14 @@ package com.celexus.conniption.foreman.util;
 
 import static org.junit.Assert.assertEquals;
 
+import com.celexus.conniption.foreman.enums.ResponseFormat;
+import com.celexus.conniption.foreman.enums.TopList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.celexus.conniption.foreman.util.APICall.TopList;
 
 public class APICallsTest {
 
@@ -30,9 +31,9 @@ public class APICallsTest {
         String balances = APICall.getAccountBalances(ResponseFormat.XML);
         String byID = APICall.getAccountByID(ResponseFormat.XML, "myId");
 
-        assertEquals(accounts, "https://api.tradeking.com/v1/accounts.xml");
-        assertEquals(balances, "https://api.tradeking.com/v1/accounts/balances.xml");
-        assertEquals(byID, "https://api.tradeking.com/v1/accounts/myId.xml");
+        assertEquals(accounts, "https://devapi.invest.ally.com/v1/accounts.xml");
+        assertEquals(balances, "https://devapi.invest.ally.com/v1/accounts/balances.xml");
+        assertEquals(byID, "https://devapi.invest.ally.com/v1/accounts/myId.xml");
     }
 
     @Test
@@ -41,9 +42,9 @@ public class APICallsTest {
         String postOrder = APICall.postOrderByAccountID(ResponseFormat.XML, "myId");
         String preview = APICall.postOrderByAccountIDPreview(ResponseFormat.XML, "myId");
 
-        assertEquals(orderByID, "https://api.tradeking.com/v1/accounts/myId/orders.xml");
-        assertEquals(postOrder, "https://api.tradeking.com/v1/accounts/myId/orders.xml");
-        assertEquals(preview, "https://api.tradeking.com/v1/accounts/myId/orders/preview.xml");
+        assertEquals(orderByID, "https://devapi.invest.ally.com/v1/accounts/myId/orders.xml");
+        assertEquals(postOrder, "https://devapi.invest.ally.com/v1/accounts/myId/orders.xml");
+        assertEquals(preview, "https://devapi.invest.ally.com/v1/accounts/myId/orders/preview.xml");
     }
 
     @Test
@@ -58,34 +59,34 @@ public class APICallsTest {
         String timeSales = APICall.getTimeSales(ResponseFormat.XML);
         String gainers = APICall.getTopList(TopList.GAINERS_ACTIVE, ResponseFormat.XML);
 
-        assertEquals(clock, "https://api.tradeking.com/v1/market/clock.xml");
-        assertEquals(quote, "https://api.tradeking.com/v1/market/ext/quotes.xml");
-        assertEquals(newsSearch, "https://api.tradeking.com/v1/market/news/search.xml");
+        assertEquals(clock, "https://devapi.invest.ally.com/v1/market/clock.xml");
+        assertEquals(quote, "https://devapi.invest.ally.com/v1/market/ext/quotes.xml");
+        assertEquals(newsSearch, "https://devapi.invest.ally.com/v1/market/news/search.xml");
         assertEquals(
                 news,
-                "https://api.tradeking.com/v1/market/news/234899d5fd2ee9a501a8349a0f571f6f.xml");
-        assertEquals(optionsSearch, "https://api.tradeking.com/v1/market/options/search.xml");
-        assertEquals(optionStrikes, "https://api.tradeking.com/v1/market/options/strikes.xml");
+                "https://devapi.invest.ally.com/v1/market/news/234899d5fd2ee9a501a8349a0f571f6f.xml");
+        assertEquals(optionsSearch, "https://devapi.invest.ally.com/v1/market/options/search.xml");
+        assertEquals(optionStrikes, "https://devapi.invest.ally.com/v1/market/options/strikes.xml");
         assertEquals(
-                optionExpirations, "https://api.tradeking.com/v1/market/options/expirations.xml");
-        assertEquals(timeSales, "https://api.tradeking.com/v1/market/timesales.xml");
+                optionExpirations, "https://devapi.invest.ally.com/v1/market/options/expirations.xml");
+        assertEquals(timeSales, "https://devapi.invest.ally.com/v1/market/timesales.xml");
         assertEquals(
                 gainers,
-                "https://api.tradeking.com/v1/market/toplists/topactivegainersbydollarvalue.xml");
+                "https://devapi.invest.ally.com/v1/market/toplists/topactivegainersbydollarvalue.xml");
     }
 
     @Test
     public void memberTest() {
         String member = APICall.getMemberProfile(ResponseFormat.XML);
-        assertEquals(member, "https://api.tradeking.com/v1/member/profile.xml");
+        assertEquals(member, "https://devapi.invest.ally.com/v1/member/profile.xml");
     }
 
     @Test
     public void utilityTest() {
         String status = APICall.getTKStatus(ResponseFormat.XML);
         String version = APICall.getTKVersion(ResponseFormat.XML);
-        assertEquals(status, "https://api.tradeking.com/v1/utility/status.xml");
-        assertEquals(version, "https://api.tradeking.com/v1/utility/version.xml");
+        assertEquals(status, "https://devapi.invest.ally.com/v1/utility/status.xml");
+        assertEquals(version, "https://devapi.invest.ally.com/v1/utility/version.xml");
     }
 
     @Test
@@ -98,12 +99,12 @@ public class APICallsTest {
         String deleteSymbolWatchList =
                 APICall.deleteSymbolFromWatchList("myId", "sym", ResponseFormat.XML);
 
-        assertEquals(watchlists, "https://api.tradeking.com/v1/watchlists.xml");
-        assertEquals(postWatchlists, "https://api.tradeking.com/v1/watchlists.xml");
-        assertEquals(getWatchlistsId, "https://api.tradeking.com/v1/watchlists/myId.xml");
-        assertEquals(deleteWatchlistsId, "https://api.tradeking.com/v1/watchlists/myId.xml");
+        assertEquals(watchlists, "https://devapi.invest.ally.com/v1/watchlists.xml");
+        assertEquals(postWatchlists, "https://devapi.invest.ally.com/v1/watchlists.xml");
+        assertEquals(getWatchlistsId, "https://devapi.invest.ally.com/v1/watchlists/myId.xml");
+        assertEquals(deleteWatchlistsId, "https://devapi.invest.ally.com/v1/watchlists/myId.xml");
         assertEquals(
-                getWatchlistsSymbol, "https://api.tradeking.com/v1/watchlist/myId/symbols.xml");
-        assertEquals(deleteSymbolWatchList, "https://api.tradeking.com/v1/watchlists/myId/sym.xml");
+                getWatchlistsSymbol, "https://devapi.invest.ally.com/v1/watchlists/myId/symbols.xml");
+        assertEquals(deleteSymbolWatchList, "https://devapi.invest.ally.com/v1/watchlists/myId/sym.xml");
     }
 }

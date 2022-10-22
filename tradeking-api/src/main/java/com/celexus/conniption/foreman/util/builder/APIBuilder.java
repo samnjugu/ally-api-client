@@ -29,7 +29,7 @@ import com.github.scribejava.core.model.Verb;
  * @author cam
  *
  */
-public abstract class APIBuilder implements Serializable {
+public abstract class APIBuilder {
 
     private static final long serialVersionUID = 5364934694744835663L;
     protected Verb verb;

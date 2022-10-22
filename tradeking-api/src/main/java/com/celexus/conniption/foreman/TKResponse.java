@@ -30,7 +30,7 @@ import com.github.scribejava.core.model.Response;
  * @author cam
  *
  */
-public class TKResponse implements Serializable {
+public class TKResponse {
 
     private static final long serialVersionUID = 1626169989303557890L;
     private String response = "";

@@ -1,14 +1,8 @@
 package com.celexus.conniption.foreman.stream;
 
-import java.io.Reader;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import javax.swing.text.Document;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamReader;
 
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.AsyncHttpClient;
@@ -25,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 import com.celexus.conniption.foreman.ForemanConstants;
 import com.celexus.conniption.foreman.util.APICall;
-import com.celexus.conniption.foreman.util.ResponseFormat;
+import com.celexus.conniption.foreman.enums.ResponseFormat;
 import com.celexus.conniption.model.quotes.Quote;
 import com.celexus.conniption.model.util.JAXBUtils;
 
@@ -83,10 +77,10 @@ public class StreamingQuote {
 	 * @return
 	 */
 	public ListenableFuture<List<Quote>> stream(final StreamHandler<Quote> handler, String... symbols) {
-		ConsumerKey consumer = new ConsumerKey(ForemanConstants.API_KEY.toString(),
-				ForemanConstants.API_SECRET.toString());
-		RequestToken user = new RequestToken(ForemanConstants.ACCESS_TOKEN.toString(),
-				ForemanConstants.ACCESS_TOKEN_SECRET.toString());
+		ConsumerKey consumer = new ConsumerKey(ForemanConstants.CONSUMER_KEY.toString(),
+				ForemanConstants.CONSUMER_SECRET.toString());
+		RequestToken user = new RequestToken(ForemanConstants.OAUTH_TOKEN.toString(),
+				ForemanConstants.OAUTH_TOKEN_SECRET.toString());
 		OAuthSignatureCalculator calc = new OAuthSignatureCalculator(consumer, user);
 
 		ListenableFuture<List<Quote>> response = client

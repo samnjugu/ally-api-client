@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.celexus.conniption.foreman.util.ResponseFormat;
+import com.celexus.conniption.foreman.enums.ResponseFormat;
 
 public class AccountsBuilderTest {
 
@@ -15,7 +15,7 @@ public class AccountsBuilderTest {
         assertTrue(b.getParameters().isEmpty());
         assertEquals(
                 "Resource URL different",
-                "https://api.tradeking.com/v1/accounts/XXX.xml",
+                "https://devapi.invest.ally.com/v1/accounts/XXX.xml",
                 b.getResourceURL());
     }
 
@@ -23,7 +23,7 @@ public class AccountsBuilderTest {
     public void getAccountsTest() {
         APIBuilder b = AccountsBuilder.getAccounts(ResponseFormat.XML);
         assertTrue(b.getParameters().isEmpty());
-        assertEquals("", "https://api.tradeking.com/v1/accounts.xml", b.getResourceURL());
+        assertEquals("", "https://devapi.invest.ally.com/v1/accounts.xml", b.getResourceURL());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class AccountsBuilderTest {
         assertTrue(b.getParameters().isEmpty());
         assertEquals(
                 "Resource URL different",
-                "https://api.tradeking.com/v1/accounts/XXX/balances.xml",
+                "https://devapi.invest.ally.com/v1/accounts/XXX/balances.xml",
                 b.getResourceURL());
     }
 
@@ -42,7 +42,7 @@ public class AccountsBuilderTest {
         assertTrue(b.getParameters().isEmpty());
         assertEquals(
                 "Resource URL different",
-                "https://api.tradeking.com/v1/accounts/balances.xml",
+                "https://devapi.invest.ally.com/v1/accounts/balances.xml",
                 b.getResourceURL());
     }
 }

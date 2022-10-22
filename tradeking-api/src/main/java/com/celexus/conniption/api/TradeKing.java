@@ -12,7 +12,7 @@ import com.celexus.conniption.foreman.TKResponse;
 import com.celexus.conniption.foreman.TradeKingForeman;
 import com.celexus.conniption.foreman.stream.StreamHandler;
 import com.celexus.conniption.foreman.stream.StreamingQuote;
-import com.celexus.conniption.foreman.util.ResponseFormat;
+import com.celexus.conniption.foreman.enums.ResponseFormat;
 import com.celexus.conniption.foreman.util.builder.APIBuilder;
 import com.celexus.conniption.foreman.util.builder.AccountsBuilder;
 import com.celexus.conniption.foreman.util.builder.MarketBuilder;

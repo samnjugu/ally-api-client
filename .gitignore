@@ -6,3 +6,4 @@ zookeeper.out
 target
 *~
 *.DS_Store
+.idea

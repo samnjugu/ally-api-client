@@ -16,7 +16,6 @@
 package com.celexus.conniption.foreman;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
@@ -38,7 +37,7 @@ import com.github.scribejava.core.oauth.OAuth10aService;
  * @author cam, khoanguyen0791
  *
  */
-public class TradeKingForeman implements Serializable {
+public class TradeKingForeman  {
 
 	private static final long serialVersionUID = 7830844282343108561L;
 	private OAuth1AccessToken accessToken;
@@ -63,7 +62,7 @@ public class TradeKingForeman implements Serializable {
 			connect();
 		}
 		log.trace("\t ... Verb:" + b.getVerb());
-		log.trace("\t ... Resource URL:" + b.getResourceURL());
+		log.info("\t ... Resource URL:" + b.getResourceURL());
 		log.trace("\t ... Body:" + b.getBody());
 		log.trace("\t ... Parameters:" + !b.getParameters().isEmpty());
 		log.trace("Making an API Call");
@@ -81,11 +80,11 @@ public class TradeKingForeman implements Serializable {
 	 */
 	private void connect() throws ForemanException {
 		log.trace("Connecting to Tradeking");
-		srv = new ServiceBuilder(ForemanConstants.API_KEY.toString()).apiSecret(ForemanConstants.API_SECRET.toString())
+		srv = new ServiceBuilder(ForemanConstants.CONSUMER_KEY.toString()).apiSecret(ForemanConstants.CONSUMER_SECRET.toString())
 				.build(new TradekingAPI());
 		log.trace("\t ... Service built!");
-		accessToken = new OAuth1AccessToken(ForemanConstants.ACCESS_TOKEN.toString(),
-				ForemanConstants.ACCESS_TOKEN_SECRET.toString());
+		accessToken = new OAuth1AccessToken(ForemanConstants.OAUTH_TOKEN.toString(),
+				ForemanConstants.OAUTH_TOKEN_SECRET.toString());
 		log.trace("\t ... Access Token built!");
 		log.trace("Connection Established");
 	}
@@ -164,6 +163,8 @@ public class TradeKingForeman implements Serializable {
 	 * 
 	 * Change to using OAuthService execute() to get response. Tested and work with
 	 * getting quotes.
+	 *
+	 * Auth exceptions return a null response object
 	 * 
 	 * @param send
 	 *            an OAuthRequest (OAuth 1) request

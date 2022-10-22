@@ -18,13 +18,14 @@ package com.celexus.conniption.foreman.stream;
 import java.util.List;
 import java.util.concurrent.Future;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.celexus.conniption.model.quotes.Quote;
 public class StreamingQuoteTest {
 
 	@Test
-	//@Ignore
+	@Ignore
 	public void test() throws Exception {
 		StreamingQuote quote = new StreamingQuote();
 

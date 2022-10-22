@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.celexus.conniption.foreman.util.ResponseFormat;
+import com.celexus.conniption.foreman.enums.ResponseFormat;
 
 public class OrdersBuilderTest {
 
@@ -15,7 +15,7 @@ public class OrdersBuilderTest {
         assertTrue("Parameters are not empty!", b.getParameters().isEmpty());
         assertEquals(
                 "Resource URL different",
-                "https://api.tradeking.com/v1/accounts/XXX/orders.xml",
+                "https://devapi.invest.ally.com/v1/accounts/XXX/orders.xml",
                 b.getResourceURL());
     }
 
@@ -25,7 +25,7 @@ public class OrdersBuilderTest {
         assertTrue("Parameters are not empty!", b.getParameters().isEmpty());
         assertEquals(
                 "Resource URL different",
-                "https://api.tradeking.com/v1/accounts/XXX/orders.xml",
+                "https://devapi.invest.ally.com/v1/accounts/XXX/orders.xml",
                 b.getResourceURL());
         assertEquals("Request Payload different", "bogusFIXML", b.getBody());
     }
@@ -36,7 +36,7 @@ public class OrdersBuilderTest {
         assertTrue("Parameters are not empty!", b.getParameters().isEmpty());
         assertEquals(
                 "Resource URL different",
-                "https://api.tradeking.com/v1/accounts/XXX/orders/preview.xml",
+                "https://devapi.invest.ally.com/v1/accounts/XXX/orders/preview.xml",
                 b.getResourceURL());
         assertEquals("Request Payload different", "bogusFIXML", b.getBody());
     }

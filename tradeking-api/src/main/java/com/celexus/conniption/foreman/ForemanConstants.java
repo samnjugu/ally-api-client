@@ -15,38 +15,36 @@
  */
 package com.celexus.conniption.foreman;
 
-import java.io.Serializable;
-
 /**
- * TradeKing Foreman's Constants. These can be set either as system enviroment
+ * Allys Foreman's Constants. These can be set either as system enviroment
  * variables or as system properties. System properties take precendence over
  * environment variables.
  *
  * @author cam, garth
  *
  */
-public enum ForemanConstants implements Serializable {
+public enum ForemanConstants {
 
     /**
-     * TradeKing Account Number
+     * Ally Account Number
      */
-    TK_ACCOUNT_NO("TK_ACCOUNT_NO"),
+    ACCOUNT_NO("ACCOUNT_NO"),
     /**
-     * TradeKing OAuth API Key
+     * Ally OAuth API Key
      */
-    API_KEY("API_KEY"),
+    CONSUMER_KEY("CONSUMER_KEY"),
     /**
-     * TradeKing OAuth API Secret Key
+     * Ally OAuth API Secret Key
      */
-    API_SECRET("API_SECRET"),
+    CONSUMER_SECRET("CONSUMER_SECRET"),
     /**
-     * TradeKing OAuth Access Token Key
+     * Ally OAuth Access Token Key
      */
-    ACCESS_TOKEN("ACCESS_TOKEN"),
+    OAUTH_TOKEN("OAUTH_TOKEN"),
     /**
-     * TradeKing OAuth Access Token Secret Key
+     * Ally OAuth Access Token Secret Key
      */
-    ACCESS_TOKEN_SECRET("ACCESS_TOKEN_SECRET");
+    OAUTH_TOKEN_SECRET("OAUTH_TOKEN_SECRET");
 
     private String key;
 

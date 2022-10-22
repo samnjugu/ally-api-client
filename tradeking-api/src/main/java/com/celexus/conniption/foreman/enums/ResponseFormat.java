@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.celexus.conniption.foreman.util;
+package com.celexus.conniption.foreman.enums;
 
 import java.io.Serializable;
 
@@ -23,7 +23,7 @@ import java.io.Serializable;
  * @author cam, khoanguyen0791
  *
  */
-public enum ResponseFormat implements Serializable {
+public enum ResponseFormat {
     XML,
     JSON,
     JSONP;

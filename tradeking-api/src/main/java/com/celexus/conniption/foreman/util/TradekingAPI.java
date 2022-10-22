@@ -29,9 +29,9 @@ import com.github.scribejava.core.model.OAuth1RequestToken;
 public class TradekingAPI extends DefaultApi10a implements Serializable {
 
     private static final long serialVersionUID = 4355447429052389540L;
-    private static final String REQUEST_TOKEN_RESOURCE = "https://developers.tradeking.com/oauth/request_token";
-    private static final String ACCESS_TOKEN_RESOURCE = "https://developers.tradeking.com/oauth/access_token";
-    private static final String AUTHORIZE_URL = "https://developers.tradeking.com/oauth/authorize?oauth_token=%s";
+    private static final String REQUEST_TOKEN_RESOURCE = "https://devapi.invest.ally.com/oauth/request_token";
+    private static final String ACCESS_TOKEN_RESOURCE = "https://devapi.invest.ally.com/oauth/access_token";
+    private static final String AUTHORIZE_URL = "https://devapi.invest.ally.com/oauth/authorize?oauth_token=%s";
     
 
     @Override

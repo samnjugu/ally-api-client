@@ -15,26 +15,19 @@
  */
 package com.celexus.conniption.foreman.util.builder;
 
-import java.awt.geom.QuadCurve2D;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.GroupLayout.Alignment;
-
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.celexus.conniption.foreman.stream.StreamingQuote;
 import com.celexus.conniption.foreman.util.APICall;
-import com.celexus.conniption.foreman.util.ResponseFormat;
-import com.celexus.conniption.foreman.util.APICall.MARKET;
+import com.celexus.conniption.foreman.enums.ResponseFormat;
 import com.github.scribejava.core.model.Verb;
-
-import io.netty.util.internal.logging.Log4J2LoggerFactory;
 
 /**
  * Extends APIBuilder to build TradeKing Market calls.
