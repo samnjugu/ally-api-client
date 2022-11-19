@@ -1,16 +1,10 @@
 package com.celexus.conniption.model.accounts;
 
 import com.celexus.conniption.model.XmlParsingTest;
-import com.celexus.conniption.model.accounts.AccountsResponse.*;
-import com.celexus.conniption.model.accounts.AccountsResponse;
-import com.celexus.conniption.model.util.JAXBUtils;
-import java.io.FileInputStream;
 import java.util.List;
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
+import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.Test;
-import org.xml.sax.InputSource;
 
 public class AccountsResponseTest extends XmlParsingTest {
 
@@ -25,7 +19,7 @@ public class AccountsResponseTest extends XmlParsingTest {
 	List<AccountSummary> summaries = accounts.getAccountsummary();
 	assertThat(summaries.size(), is(1));
 	for (AccountSummary summary : summaries) {
-	    if (summary.getAccount() == 88963310) {
+	    if (summary.getAccount().equalsIgnoreCase("88963310L")) {
 		AccountBalance accountBalance = summary.getAccountbalance();
 		assertThat(accountBalance, notNullValue());
 		assertThat(accountBalance.getAccountvalue(), is(285072.75));
