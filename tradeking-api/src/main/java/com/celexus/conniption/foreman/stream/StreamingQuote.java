@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.celexus.conniption.foreman.util.properties.AllyProperties;
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
@@ -17,7 +18,6 @@ import org.asynchttpclient.oauth.RequestToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.celexus.conniption.foreman.ForemanConstants;
 import com.celexus.conniption.foreman.util.APICall;
 import com.celexus.conniption.foreman.enums.ResponseFormat;
 import com.celexus.conniption.model.quotes.Quote;
@@ -77,10 +77,8 @@ public class StreamingQuote {
 	 * @return
 	 */
 	public ListenableFuture<List<Quote>> stream(final StreamHandler<Quote> handler, String... symbols) {
-		ConsumerKey consumer = new ConsumerKey(ForemanConstants.CONSUMER_KEY.toString(),
-				ForemanConstants.CONSUMER_SECRET.toString());
-		RequestToken user = new RequestToken(ForemanConstants.OAUTH_TOKEN.toString(),
-				ForemanConstants.OAUTH_TOKEN_SECRET.toString());
+		ConsumerKey consumer = new ConsumerKey(AllyProperties.CONSUMER_KEY,AllyProperties.CONSUMER_SECRET);
+		RequestToken user = new RequestToken(AllyProperties.OAUTH_TOKEN,AllyProperties.OAUTH_TOKEN_SECRET);
 		OAuthSignatureCalculator calc = new OAuthSignatureCalculator(consumer, user);
 
 		ListenableFuture<List<Quote>> response = client

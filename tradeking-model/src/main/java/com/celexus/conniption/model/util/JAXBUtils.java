@@ -129,17 +129,17 @@ public class JAXBUtils {
 	static class EmployeeValidationEventHandler implements ValidationEventHandler {
 		@Override
 		public boolean handleEvent(ValidationEvent event) {
-			log.error("\nEVENT");
-			log.error("SEVERITY:  " + event.getSeverity());
-			log.error("MESSAGE:  " + event.getMessage());
-			log.error("LINKED EXCEPTION:  " + event.getLinkedException());
-			log.error("LOCATOR");
-			log.error("    LINE NUMBER:  " + event.getLocator().getLineNumber());
-			log.error("    COLUMN NUMBER:  " + event.getLocator().getColumnNumber());
-			log.error("    OFFSET:  " + event.getLocator().getOffset());
-			log.error("    OBJECT:  " + event.getLocator().getObject());
-			log.error("    NODE:  " + event.getLocator().getNode());
-			log.error("    URL:  " + event.getLocator().getURL());
+			log.trace("\nEVENT");
+			log.trace("SEVERITY:  " + event.getSeverity());
+			log.trace("MESSAGE:  " + event.getMessage());
+			log.trace("LINKED EXCEPTION:  " + event.getLinkedException());
+			log.trace("LOCATOR");
+			log.trace("    LINE NUMBER:  " + event.getLocator().getLineNumber());
+			log.trace("    COLUMN NUMBER:  " + event.getLocator().getColumnNumber());
+			log.trace("    OFFSET:  " + event.getLocator().getOffset());
+			log.trace("    OBJECT:  " + event.getLocator().getObject());
+			log.trace("    NODE:  " + event.getLocator().getNode());
+			log.trace("    URL:  " + event.getLocator().getURL());
 			return true;
 		}
 	}

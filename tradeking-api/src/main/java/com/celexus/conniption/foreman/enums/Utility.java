@@ -1,5 +1,6 @@
 package com.celexus.conniption.foreman.enums;
 
+import com.celexus.conniption.foreman.util.properties.AllyProperties;
 import com.github.scribejava.core.model.Verb;
 
 public enum Utility {
@@ -33,6 +34,6 @@ public enum Utility {
     }
 
     private static class baseUrl{
-        private static String url = "https://devapi.invest.ally.com/v1/utility";
+        private static String url =  AllyProperties.ALLY_URL+"utility";
     }
 }

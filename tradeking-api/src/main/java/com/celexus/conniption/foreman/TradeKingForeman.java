@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
 
+import com.celexus.conniption.foreman.util.properties.AllyProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,7 +45,12 @@ public class TradeKingForeman  {
 	private OAuth10aService srv;
 	private Logger log = LoggerFactory.getLogger(TradeKingForeman.class);
 
-	public TradeKingForeman() {
+	public TradeKingForeman() throws ForemanException {
+		connect();
+	}
+
+	public TradeKingForeman(String consumerKey, String consumerSecret, String oauthToken, String oauthTokenSecret) throws ForemanException {
+		connect(consumerKey, consumerSecret, oauthToken, oauthTokenSecret);
 	}
 
 	/**
@@ -58,9 +64,6 @@ public class TradeKingForeman  {
 	 */
 	public TKResponse makeAPICall(APIBuilder b)
 			throws ForemanException, InterruptedException, ExecutionException, IOException {
-		if (!isConnected()) {
-			connect();
-		}
 		log.trace("\t ... Verb:" + b.getVerb());
 		log.info("\t ... Resource URL:" + b.getResourceURL());
 		log.trace("\t ... Body:" + b.getBody());
@@ -70,7 +73,7 @@ public class TradeKingForeman  {
 	}
 
 	/**
-	 * Connect to Ally using the secret keys and token from your account. This uses
+	 * Connect to Ally using the secret keys and token from properties file. This uses
 	 * sribejava for OAuth and configures the TradekingAPI() passed into the
 	 * constructor.
 	 * 
@@ -79,12 +82,29 @@ public class TradeKingForeman  {
 	 * @throws ForemanException
 	 */
 	private void connect() throws ForemanException {
-		log.trace("Connecting to Tradeking");
-		srv = new ServiceBuilder(ForemanConstants.CONSUMER_KEY.toString()).apiSecret(ForemanConstants.CONSUMER_SECRET.toString())
+		log.trace("Connecting to Ally");
+		srv = new ServiceBuilder(AllyProperties.CONSUMER_KEY).apiSecret(AllyProperties.CONSUMER_SECRET)
 				.build(new TradekingAPI());
 		log.trace("\t ... Service built!");
-		accessToken = new OAuth1AccessToken(ForemanConstants.OAUTH_TOKEN.toString(),
-				ForemanConstants.OAUTH_TOKEN_SECRET.toString());
+		accessToken = new OAuth1AccessToken(AllyProperties.OAUTH_TOKEN,AllyProperties.OAUTH_TOKEN_SECRET);
+		log.trace("\t ... Access Token built!");
+		log.trace("Connection Established");
+	}
+
+	/**
+	 * Connect to Ally using the secret keys and token from constructor. This uses
+	 * sribejava for OAuth and configures the TradekingAPI() passed into the
+	 * constructor.
+	 *
+	 * This sets the srv variable.
+	 *
+	 * @throws ForemanException
+	 */
+	private void connect(String consumerKey, String consumerSecret, String oauthToken, String oauthTokenSecret) throws ForemanException {
+		log.trace("Connecting to Ally");
+		srv = new ServiceBuilder(consumerKey).apiSecret(consumerSecret).build(new TradekingAPI());
+		log.trace("\t ... Service built!");
+		accessToken = new OAuth1AccessToken(oauthToken,oauthTokenSecret);
 		log.trace("\t ... Access Token built!");
 		log.trace("Connection Established");
 	}

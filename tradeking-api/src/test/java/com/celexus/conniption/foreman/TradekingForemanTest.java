@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
+import com.celexus.conniption.foreman.util.properties.AllyProperties;
 import com.celexus.conniption.model.accounts.Accounts;
 import org.junit.Test;
 
@@ -15,11 +16,20 @@ import com.celexus.conniption.foreman.util.builder.MarketBuilder;
 public class TradekingForemanTest {
 
     @Test
-    public void connectionTest() {
+    public void connectionTest() throws ForemanException {
         TradeKingForeman foreman = new TradeKingForeman();
 
-        assertTrue("Foreman does not have OAuth Service", !foreman.hasOAuth());
-        assertTrue("Foreman does not have Access Token", !foreman.hasAccessToken());
+        assertTrue("Foreman does have OAuth Service", foreman.hasOAuth());
+        assertTrue("Foreman does have Access Token", foreman.hasAccessToken());
+    }
+
+    @Test
+    public void connectionTest2() throws ForemanException {
+        TradeKingForeman foreman = new TradeKingForeman(AllyProperties.CONSUMER_KEY,AllyProperties.CONSUMER_SECRET,
+                AllyProperties.OAUTH_TOKEN,AllyProperties.OAUTH_TOKEN_SECRET);
+
+        assertTrue("Foreman does have OAuth Service", foreman.hasOAuth());
+        assertTrue("Foreman does have Access Token", foreman.hasAccessToken());
     }
 
     @Test
