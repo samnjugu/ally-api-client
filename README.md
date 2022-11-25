@@ -48,6 +48,12 @@ Keys and tokens given to you by Ally can be stored as properies in the ally.prop
 
 To check if the variables are loaded, run unit tests.
 
+### Prevent pushing your Acount secrets
+Once you have updated the properties file with your secret information block git from checking the properties file for changes so you don't end up oushing your credentials to remote.
+```bash
+git update-index --assume-unchanged tradeking-api/src/main/resources/ally.properties
+```
+
 ### Building from source
 
 - Use the maven clean install directive `mvn clean install -T 4`to compile and make sure everything works. I highly recommend you do not use `-DskipTests`.
