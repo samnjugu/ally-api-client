@@ -53,6 +53,10 @@ Once you have updated the properties file with your secret information block git
 ```bash
 git update-index --assume-unchanged tradeking-api/src/main/resources/ally.properties
 ```
+If you do have changes in the properties file that you need to push you can undo the above ignore with the following command 
+```bash
+git update-index --no-assume-unchanged tradeking-api/src/main/resources/ally.properties
+```
 
 ### Building from source
 
