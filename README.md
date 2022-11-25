@@ -25,7 +25,7 @@
 ## NOTICE
 Updating on ecigar13 project who improved on xgp's project. Fork of Ccook's [Conniption](https://github.com/Ccook/conniption) project. This is now significantly departed. We now use xjc to automatically build Java classes for the model with [XSD](https://github.com/samnjugu/ally-api-client/tree/master/tradeking-model/src/main/xsd) built by hand from TradeKing's XML examples. Full FIXML parsing is also now supported using Java classes built from the [FIX Protocol](http://www.fixprotocol.org/) [FIXML](https://github.com/xgp/fixml) schemas.
 
-## Getting an API Key from TradeKing
+## Getting an API Key from Ally
 *  [Visit the Ally Developers Website](https://www.ally.com/api/invest/documentation/getting-started/)
 * Follow setup steps and you will get 4 important values needed for [OAuth](http://oauth.net/)
 * An API Key
