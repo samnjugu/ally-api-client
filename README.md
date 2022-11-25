@@ -23,40 +23,31 @@
 ```
 
 ## NOTICE
-I improved on top of xgp's project. Fork of Ccook's [Conniption](https://github.com/Ccook/conniption) project. This is now significantly departed. We now use xjc to automatically build Java classes for the model with [XSD](https://github.com/xgp/tradeking/blob/master/tradeking-model/src/main/xsd/) built by hand from TradeKing's XML examples. Full FIXML parsing is also now supported using Java classes built from the [FIX Protocol](http://www.fixprotocol.org/) [FIXML](https://github.com/xgp/fixml) schemas.
+Updating on ecigar13 project who improved on xgp's project. Fork of Ccook's [Conniption](https://github.com/Ccook/conniption) project. This is now significantly departed. We now use xjc to automatically build Java classes for the model with [XSD](https://github.com/samnjugu/ally-api-client/tree/master/tradeking-model/src/main/xsd) built by hand from TradeKing's XML examples. Full FIXML parsing is also now supported using Java classes built from the [FIX Protocol](http://www.fixprotocol.org/) [FIXML](https://github.com/xgp/fixml) schemas.
 
 ## Getting an API Key from TradeKing
-*  [Visit the Ally Developers Website](https://developers.tradeking.com/applications/)
-* Fill in their info and you will get 4 important values needed for [OAuth](http://oauth.net/)
+*  [Visit the Ally Developers Website](https://www.ally.com/api/invest/documentation/getting-started/)
+* Follow setup steps and you will get 4 important values needed for [OAuth](http://oauth.net/)
 * An API Key
 * An API Secret Key
 * An Access Token
 * A Secret Access Token
-*  [Go over the TradeKing API Docs](https://developers.tradeking.com/documentation/getting-started)
+*  [Go over the TradeKing API Docs](https://www.ally.com/api/invest/documentation/getting-started/)
 
 ## Installing
 
-Keys and tokens given to you by TradeKing can be stored as environment variables (via System.getEnv()) or as system properties (via System.getProperty()). System properties take precedence.
-
-  
+Keys and tokens given to you by Ally can be stored as properies in the ally.properties file or passed in via constructor if you want your appliacation to own providing the configuration.
 
 ### Keys
-- TK_ACCOUNT_NO
+- ACCOUNT_NO
 - API_KEY
 - API_SECRET
 - ACCESS_TOKEN
 - ACCESS_TOKEN_SECRET
 
-For environment variables, put these lines in */etc/environment* or */etc/profile* (Linux) or */etc/launchd.conf* (Mac, requires restart).
 
-To check if the variables are loaded, use `printenv` or `env` in terminal. Sometime Java (Ubuntu 16.04 LTS) won't pick up new variables without a full shutdown and restart while Ubuntu does. Use the code below to check:
-```java
-Map<String, String> env1 = System.getenv();
-TreeMap<String,String> env = new TreeMap<String,String>(env1);
-for (String envName : env.keySet()) {
-System.out.format("%s=%s%n", envName, env.get(envName));
-}
-```
+To check if the variables are loaded, run unit tests.
+
 ### Building from source
 
 - Use the maven clean install directive `mvn clean install -T 4`to compile and make sure everything works. I highly recommend you do not use `-DskipTests`.
