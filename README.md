@@ -32,7 +32,7 @@ Updating on ecigar13 project who improved on xgp's project. Fork of Ccook's [Con
 * An API Secret Key
 * An Access Token
 * A Secret Access Token
-*  [Go over the TradeKing API Docs](https://www.ally.com/api/invest/documentation/getting-started/)
+*  [Go over the Ally API Docs](https://www.ally.com/api/invest/documentation/getting-started/)
 
 ## Installing
 
