@@ -32,7 +32,7 @@ Updating on ecigar13 project who improved on xgp's project. Fork of Ccook's [Con
 * An API Secret Key
 * An Access Token
 * A Secret Access Token
-*  [Go over the TradeKing API Docs](https://www.ally.com/api/invest/documentation/getting-started/)
+*  [Go over the Ally API Docs](https://www.ally.com/api/invest/documentation/getting-started/)
 
 ## Installing
 
@@ -47,6 +47,16 @@ Keys and tokens given to you by Ally can be stored as properies in the ally.prop
 
 
 To check if the variables are loaded, run unit tests.
+
+### Prevent pushing your Acount secrets
+Once you have updated the properties file with your secret information block git from checking the properties file for changes so you don't end up pushing your credentials to remote.
+```bash
+git update-index --assume-unchanged tradeking-api/src/main/resources/ally.properties
+```
+If you do have changes in the properties file that you need to push you can undo the above ignore with the following command 
+```bash
+git update-index --no-assume-unchanged tradeking-api/src/main/resources/ally.properties
+```
 
 ### Building from source
 
