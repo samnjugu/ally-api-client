@@ -5,20 +5,19 @@
 ```xml
 <!-- https://mvnrepository.com/artifact/com.github.khoanguyen0791/tradeking-api -->
 <dependency>
-	<groupId>com.github.khoanguyen0791</groupId>
-	<artifactId>tradeking-api</artifactId>
-	<version>1.3.1</version>
+     <groupId>io.github.samnjugu</groupId>
+     <artifactId>tradeking-api</artifactId>
+     <version>1.3.2</version>
 </dependency>
 <dependency>
-	<groupId>com.github.khoanguyen0791</groupId>
-	<artifactId>ally-api-client</artifactId>
-	<version>1.3.1</version>
-	<type>pom</type>
+    <groupId>io.github.samnjugu</groupId>
+    <artifactId>ally-api-client</artifactId>
+    <version>1.3.2</version>
 </dependency>
 <dependency>
-	<groupId>com.github.khoanguyen0791</groupId>
-	<artifactId>tradeking-model</artifactId>
-	<version>1.3.1</version>
+    <groupId>io.github.samnjugu</groupId>
+    <artifactId>tradeking-model</artifactId>
+    <version>1.3.2</version>
 </dependency>
 ```
 
