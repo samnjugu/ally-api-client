@@ -3,7 +3,7 @@
 ## Maven
  
 ```xml
-<!-- https://mvnrepository.com/artifact/com.github.khoanguyen0791/tradeking-api -->
+<!-- https://central.sonatype.dev/namespace/io.github.samnjugu -->
 <dependency>
      <groupId>io.github.samnjugu</groupId>
      <artifactId>tradeking-api</artifactId>
