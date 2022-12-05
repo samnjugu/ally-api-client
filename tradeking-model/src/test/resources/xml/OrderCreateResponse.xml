@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response id="77cf30da:12e0091b2c0:-4f5d">
+    <warning>
+        <warningcode>004</warningcode>
+        <warningtext>This may be a duplicate order. Please go to the Order Status screen and review your open orders before continuing.</warningtext>
+    </warning>
+    <estcommission>0</estcommission>
+    <marginrequirement>0.0</marginrequirement>
+    <netamt>25.85</netamt>
+    <principal>20.9</principal>
+    <quotes>
+        <instrumentquote>
+            <greeks/>
+            <instrument>
+                <desc>GENERAL ELECTRIC CO</desc>
+                <exch>NYE</exch>
+                <sectyp>CS</sectyp>
+                <sym>GE</sym>
+            </instrument>
+            <quote>
+                <askprice>20.91</askprice>
+                <bidprice>20.9</bidprice>
+                <change>0.34</change>
+                <extendedquote>
+                    <asksize>247</asksize>
+                    <bidsize>264</bidsize>
+                    <dividenddata>
+                        <amt>0.14</amt>
+                        <exdate>2010-12-22T00:00:00-05:00</exdate>
+                        <paydate>2011-01-25T00:00:00-05:00</paydate>
+                        <yield>2.68</yield>
+                    </dividenddata>
+                    <earningspershare>1.15</earningspershare>
+                    <high52price>21.0</high52price>
+                    <highprice>21.0</highprice>
+                    <low52price>13.75</low52price>
+                    <lowprice>20.73</lowprice>
+                    <openprice>20.77</openprice>
+                    <prevclose>20.56</prevclose>
+                    <priceearningsratio>18.18</priceearningsratio>
+                    <sessionvolume>20000033</sessionvolume>
+                    <volume>20321868</volume>
+                </extendedquote>
+                <lastprice>20.9</lastprice>
+                <pctchange>1.65</pctchange>
+            </quote>
+            <unknownsymbol>false</unknownsymbol>
+        </instrumentquote>
+    </quotes>
+    <secfee>0.0</secfee>
+</response>

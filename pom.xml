@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.samnjugu</groupId>
   <artifactId>ally-api-client</artifactId>
-  <version>1.3.2</version>
+  <version>1.3.3</version>
   <name>ally-api-client</name>
   <description>The missing tradeking client API for Java (formerly Conniption)</description>
   <url>https://github.com/samnjugu/ally-api-client</url>
@@ -172,6 +172,14 @@
 
   <build>
     <finalName>ally-api-client</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <exclude>**/*.properties</exclude>
+        </excludes>
+      </resource>
+    </resources>
     <plugins>
       <!-- Set a JDK compiler level -->
       <plugin>
@@ -187,6 +195,11 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
         <version>3.0.1</version>
+        <configuration>
+          <excludes>
+            <exclude>com/foo/server/**</exclude>
+          </excludes>
+        </configuration>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -195,6 +208,16 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <excludes>
+            <exclude>**/resources/*.properties</exclude>
+          </excludes>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

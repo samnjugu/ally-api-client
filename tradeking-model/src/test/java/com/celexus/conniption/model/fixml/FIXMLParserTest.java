@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import org.fixprotocol.fixml.*;
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
