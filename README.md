@@ -7,17 +7,17 @@
 <dependency>
      <groupId>io.github.samnjugu</groupId>
      <artifactId>tradeking-api</artifactId>
-     <version>1.3.3</version>
+     <version>1.3.4</version>
 </dependency>
 <dependency>
     <groupId>io.github.samnjugu</groupId>
     <artifactId>ally-api-client</artifactId>
-    <version>1.3.3</version>
+    <version>1.3.4</version>
 </dependency>
 <dependency>
     <groupId>io.github.samnjugu</groupId>
     <artifactId>tradeking-model</artifactId>
-    <version>1.3.3</version>
+    <version>1.3.4</version>
 </dependency>
 ```
 
