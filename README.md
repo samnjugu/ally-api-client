@@ -95,7 +95,7 @@ System.out.println(quote.getSymbol() + " " + quote.getAsk());
 AccountsResponse  a = tk.accounts();
 
 // get some market quotes https://developers.tradeking.com/documentation/market-ext-quotes-get-post
-QuotesResponse  q = tk.quotes("TWTR", "FB");
+QuotesResponse  q = tk.quotes(new  String[] {"TWTR", "FB"});
 
 // stream market quotes https://developers.tradeking.com/documentation/streaming-market-quotes-get-post
 Future  f = tk.quotes(new  StreamHandler<Quote>() {
