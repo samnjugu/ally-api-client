@@ -98,7 +98,7 @@ AccountsResponse  a = tk.accounts();
 QuotesResponse  q = tk.quotes(new  String[] {"TWTR", "FB"});
 
 // stream market quotes https://developers.tradeking.com/documentation/streaming-market-quotes-get-post
-Future  f = tk.quotes(new  StreamHandler<Quote>() {
+Future  f = tk.streamQuotes(new  StreamHandler<Quote>() {
 public  void  handle(Quote  quote) {
 System.out.println(quote.toString());
 }
