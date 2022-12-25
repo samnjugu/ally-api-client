@@ -8,3 +8,9 @@ target
 *.DS_Store
 .idea
 ally.properties
+tradeking-model/src/main/java/com/celexus/conniption/model/accounts
+tradeking-model/src/main/java/com/celexus/conniption/model/clock
+tradeking-model/src/main/java/com/celexus/conniption/model/order
+tradeking-model/src/main/java/com/celexus/conniption/model/orders
+tradeking-model/src/main/java/com/celexus/conniption/model/quotes
+tradeking-model/src/main/java/com/celexus/conniption/model/accounts

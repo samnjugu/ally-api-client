@@ -67,7 +67,7 @@ public class TradeKingForeman  {
 		log.trace("\t ... Verb:" + b.getVerb());
 		log.info("\t ... Resource URL:" + b.getResourceURL());
 		log.trace("\t ... Body:" + b.getBody());
-		log.trace("\t ... Parameters:" + !b.getParameters().isEmpty());
+		log.trace("\t ... Parameters:" + (b.getParameters().isEmpty() ? "No Params" : b.getParameters()));
 		log.trace("Making an API Call");
 		return sendRequest(makeRequest(b.getVerb(), b.getResourceURL(), b.getParameters(), b.getBody()));
 	}
@@ -186,7 +186,7 @@ public class TradeKingForeman  {
 	 *
 	 * Auth exceptions return a null response object
 	 * 
-	 * @param send
+	 * @param request
 	 *            an OAuthRequest (OAuth 1) request
 	 * @return a Response based object.
 	 */

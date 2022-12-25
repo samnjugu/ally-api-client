@@ -8,8 +8,8 @@ public enum Accounts {
     ACCOUNTS_BALANCES(baseUrl.url+"/balances",  "."),
     ID(baseUrl.url+"/", "."),
     ID_BALANCES(baseUrl.url+"/", "/balances", "", "", ""),
-    ID_HISTORY(baseUrl.url, "/history", "."),
-    ID_HOLDINGS(baseUrl.url, "/holdings", ".");
+    ID_HISTORY(baseUrl.url+"/", "/history", ""),
+    ID_HOLDINGS(baseUrl.url+"/", "/holdings", "");
 
     private String[] urlStrings;
 

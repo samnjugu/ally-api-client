@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response id="77cf30da:12df25c7074:-7e97">
+    <transactions>
+        <transaction>
+            <activity>Trade</activity>
+            <amount>1682.05</amount>
+            <date>2011-01-10T00:00:00-05:00</date>
+            <desc>TEST EQUITY</desc>
+            <symbol>ZVZZT</symbol>
+            <transaction>
+                <accounttype>2</accounttype>
+                <commission>0</commission>
+                <description>TEST EQUITY</description>
+                <fee>0.0</fee>
+                <price>1687.04</price>
+                <quantity>-1.0</quantity>
+                <secfee>0.04</secfee>
+                <security>
+                    <cusip>222222222</cusip>
+                    <id>22222222</id>
+                    <sectyp>CS</sectyp>
+                    <sym>ZVZZT</sym>
+                </security>
+                <settlementdate>2011-01-13T00:00:00-05:00</settlementdate>
+                <side>2</side>
+                <source>XCH</source>
+                <tradedate>2011-01-10T00:00:00-05:00</tradedate>
+                <transactionid>7</transactionid>
+            </transaction>
+        </transaction>
+        <transaction>
+            <activity>Dividend</activity>
+            <amount>0.42</amount>
+            <date>2011-01-25T00:00:00-05:00</date>
+            <desc>GENERAL ELECTRIC CO</desc>
+            <symbol>GE</symbol>
+            <transaction>
+                <accounttype>2</accounttype>
+                <commission>0.0</commission>
+                <description>GENERAL ELECTRIC CO</description>
+                <fee>0.0</fee>
+                <price>0.0</price>
+                <quantity>3.0</quantity>
+                <secfee>0.0</secfee>
+                <security>
+                    <cusip>369604103</cusip>
+                    <id>36960410</id>
+                    <sectyp>CS</sectyp>
+                    <sym>GE</sym>
+                </security>
+                <source>DIV</source>
+                <tradedate>2011-01-25T00:00:00-05:00</tradedate>
+                <transactionid>7</transactionid>
+                <transactiontype>Qualified Dividend</transactiontype>
+            </transaction>
+        </transaction>
+        <transaction>
+            <activity>Bookkeeping</activity>
+            <amount>1079.11</amount>
+            <date>2010-12-15T00:00:00-05:00</date>
+            <desc>FR 38842969</desc>
+            <transaction>
+                <accounttype>1</accounttype>
+                <commission>0.0</commission>
+                <description>FR 38842969</description>
+                <fee>0.0</fee>
+                <price>0.0</price>
+                <quantity>0.0</quantity>
+                <secfee>0.0</secfee>
+                <security>
+                    <sectyp>OTHER</sectyp>
+                </security>
+                <source>JNL</source>
+                <tradedate>2010-12-15T00:00:00-05:00</tradedate>
+                <transactionid>7</transactionid>
+                <transactiontype>Cash Journal</transactiontype>
+            </transaction>
+        </transaction>
+    </transactions>
+</response>

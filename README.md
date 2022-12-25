@@ -7,17 +7,17 @@
 <dependency>
      <groupId>io.github.samnjugu</groupId>
      <artifactId>tradeking-api</artifactId>
-     <version>1.3.4</version>
+     <version>1.3.5</version>
 </dependency>
 <dependency>
     <groupId>io.github.samnjugu</groupId>
     <artifactId>ally-api-client</artifactId>
-    <version>1.3.4</version>
+    <version>1.3.5</version>
 </dependency>
 <dependency>
     <groupId>io.github.samnjugu</groupId>
     <artifactId>tradeking-model</artifactId>
-    <version>1.3.4</version>
+    <version>1.3.5</version>
 </dependency>
 ```
 
@@ -97,6 +97,12 @@ AccountsResponse  a = tk.accounts();
 // get some market quotes https://developers.tradeking.com/documentation/market-ext-quotes-get-post
 QuotesResponse  q = tk.quotes(new  String[] {"TWTR", "FB"});
 
+// Get Account History
+ HistoryResponse h = tk.history(AllyProperties.ACCOUNT_NO);        
+
+//Get Account Holdings
+AccountHoldingsResponse h3 = tk.holdings(AllyProperties.ACCOUNT_NO);
+        
 // stream market quotes https://developers.tradeking.com/documentation/streaming-market-quotes-get-post
 Future  f = tk.streamQuotes(new  StreamHandler<Quote>() {
 public  void  handle(Quote  quote) {
@@ -106,7 +112,7 @@ System.out.println(quote.toString());
 
 // place a non-executing, preview order
 FIXMLBuilder  builder = new  FIXMLBuilder()
-.id(ForemanConstants.TK_ACCOUNT_NO.toString())
+.id(AllyProperties.ACCOUNT_NO.toString())
 .timeInForce(TimeInForceField.DAY_ORDER)
 .symbol("TWTR")
 .priceType(PriceType.LIMIT)
@@ -115,13 +121,13 @@ FIXMLBuilder  builder = new  FIXMLBuilder()
 .executionPrice(18.01)
 .side(MarketSideField.BUY);
 
-OrderResponse  p = tk.preview(ForemanConstants.TK_ACCOUNT_NO, builder.build().toString());
+OrderResponse  p = tk.preview(AllyProperties.ACCOUNT_NO, builder.build().toString());
 
 // place a real order
-OrderResponse  o = tk.order(ForemanConstants.TK_ACCOUNT_NO, builder.build().toString());
+OrderResponse  o = tk.order(AllyProperties.ACCOUNT_NO, builder.build().toString());
 
 // check the status of your orders
-OrdersResponse  os = tk.orders(ForemanConstants.TK_ACCOUNT_NO);
+OrdersResponse  os = tk.orders(AllyProperties.ACCOUNT_NO);
 ```
 
 ## Warnings

@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Future;
 
+import com.celexus.conniption.foreman.enums.AccountHistoryField;
+import com.celexus.conniption.model.accounts.AccountHoldingsResponse;
+import com.celexus.conniption.model.accounts.HistoryResponse;
 import org.apache.commons.lang3.builder.RecursiveToStringStyle;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
@@ -59,6 +62,34 @@ public class TradeKing {
 		return get(AccountsBuilder.getAccounts(ResponseFormat.XML), null, "com.celexus.conniption.model.accounts",
 				AccountsResponse.class);
 	}
+
+	/**
+	 * Request history for all time and transaction types
+	 * @param accountId  - Account Number
+	 ** *
+	 **/
+	public HistoryResponse history(String accountId) {
+		return get(AccountsBuilder.getAccountHistory(accountId,ResponseFormat.XML), null, "com.celexus.conniption.model.accounts",
+				HistoryResponse.class);
+	}
+	/**
+	 * Request history for particular range and transaction types
+	 * @param accountId  - Account Number
+	 * @param range - values: all, today, current_week, current_month, last_month
+	 * @param transactions - values: all, bookkeeping, trade
+	 * Note - Ally doesn't always filter on the passed in parameters
+	 * *
+	 */
+	public HistoryResponse history(String accountId, AccountHistoryField range, AccountHistoryField transactions) {
+		return get(AccountsBuilder.getAccountHistory(accountId,ResponseFormat.XML,range,transactions), null, "com.celexus.conniption.model.accounts",
+				HistoryResponse.class);
+	}
+
+	public AccountHoldingsResponse holdings(String accountId){
+		return get(AccountsBuilder.getAccountHoldings(accountId,ResponseFormat.XML),null,"com.celexus.conniption.model.accounts",
+				AccountHoldingsResponse.class);
+	}
+
 
 	/**
 	 * Preview response and unmarshal it to fixml schema.
@@ -148,7 +179,7 @@ public class TradeKing {
 	private <T> T get(APIBuilder builder, String root, String packageName, Class<T> clazz) {
 		try {
 			TKResponse response = foreman.makeAPICall(builder);
-			
+//			System.out.println(response);
 			// replace na data here
 			String temp = response.toString().replace(">na<", ">0<");
 			return JAXBUtils.getElement(packageName, temp, root, clazz);

@@ -17,6 +17,7 @@ package com.celexus.conniption.foreman.util.builder;
 
 import java.io.Serializable;
 
+import com.celexus.conniption.foreman.enums.AccountHistoryField;
 import com.celexus.conniption.foreman.util.APICall;
 import com.celexus.conniption.foreman.enums.ResponseFormat;
 import com.github.scribejava.core.model.Verb;
@@ -68,6 +69,22 @@ public class AccountsBuilder extends APIBuilder implements Serializable {
     public static APIBuilder getAccountHistory(String id, ResponseFormat format) {
         AccountsBuilder toReturn = new AccountsBuilder(Verb.GET);
         toReturn.resourceURL = APICall.getAccountHistoryByID(format, id);
+        return toReturn;
+    }
+
+    /**
+     * @param id  - Account Number
+     * @param format - response format : XML,Json
+     * @param range - values: all, today, current_week, current_month, last_month
+     * @param transactions - values: all, bookkeeping, trade
+     * *
+     */
+    public static APIBuilder getAccountHistory(String id, ResponseFormat format, AccountHistoryField range,AccountHistoryField transactions) {
+
+        AccountsBuilder toReturn = new AccountsBuilder(Verb.GET);
+        toReturn.resourceURL = APICall.getAccountHistoryByID(format, id);
+        toReturn.params.put(AccountHistoryField.RANGE_PARAM.toString(), range.toString());
+        toReturn.params.put(AccountHistoryField.TRANSACTIONS_PARAM.toString(), transactions.toString());
         return toReturn;
     }
 }

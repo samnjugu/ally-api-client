@@ -2,7 +2,10 @@ package com.celexus.conniption.api;
 
 import com.celexus.conniption.foreman.ForemanException;
 import com.celexus.conniption.foreman.TradeKingForeman;
+import com.celexus.conniption.foreman.enums.AccountHistoryField;
 import com.celexus.conniption.foreman.util.properties.AllyProperties;
+import com.celexus.conniption.model.accounts.AccountHoldingsResponse;
+import com.celexus.conniption.model.accounts.HistoryResponse;
 import com.celexus.conniption.model.clock.ClockResponse;
 import com.celexus.conniption.model.orders.OrdersResponse;
 import com.celexus.conniption.model.quotes.QuotesResponse;
@@ -24,6 +27,15 @@ public class TradekingTest {
 
         OrdersResponse ors = tk.orders(AllyProperties.ACCOUNT_NO);
         System.out.println(ors);
+
+        HistoryResponse h = tk.history(AllyProperties.ACCOUNT_NO);
+        System.out.println(h);
+
+        HistoryResponse h2 = tk.history(AllyProperties.ACCOUNT_NO, AccountHistoryField.RANGE_ALL,AccountHistoryField.TRANSACTIONS_TYPE_TRADE);
+        System.out.println(h2);
+
+        AccountHoldingsResponse h3 = tk.holdings(AllyProperties.ACCOUNT_NO);
+        System.out.println(h3);
 
     }
 }

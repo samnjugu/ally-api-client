@@ -125,6 +125,13 @@
       <xs:element type="xs:double" name="totalsecurities"/>
     </xs:sequence>
   </xs:complexType>
+
+  <xs:complexType name="AccountHoldingsResponse">
+    <xs:sequence>
+      <xs:element name="accountholdings" type="AccountHoldings"></xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
   
   <xs:complexType name="AccountSummary">
     <xs:sequence>
@@ -141,6 +148,57 @@
     </xs:sequence>
   </xs:complexType>
 
+
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element type="xs:string" name="activity"/>
+      <xs:element type="xs:double" name="amount"/>
+      <xs:element name="date" type="xs:dateTime"></xs:element>
+      <xs:element type="xs:string" name="desc"/>
+      <xs:element name="symbol" type="xs:string"></xs:element>
+      <xs:element name="transaction" type="TransactionTransaction"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TransactionTransaction">
+    <xs:sequence>
+      <xs:element type="xs:int" name="accounttype"/>
+      <xs:element type="xs:double" name="commission"/>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="xs:double" name="fee"/>
+      <xs:element type="xs:double" name="price"/>
+      <xs:element type="xs:double" name="quantity"/>
+      <xs:element type="xs:double" name="secfee"/>
+      <xs:element name="security" type="Security"></xs:element>
+      <xs:element name="settlementdate" type="xs:dateTime"></xs:element>
+      <xs:element type="xs:int" name="side"/>
+      <xs:element name="source" type="xs:string"></xs:element>
+      <xs:element name="tradedate" type="xs:dateTime"></xs:element>
+      <xs:element name="transactionid" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Security">
+    <xs:sequence>
+      <xs:element type="xs:string" name="cusip"/>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="sectyp"/>
+      <xs:element type="xs:string" name="sym"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Transactions">
+    <xs:sequence>
+      <xs:element name="transaction" type="Transaction" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HistoryResponse">
+    <xs:sequence>
+      <xs:element name="transactions" type="Transactions"></xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
 
 
 </xs:schema>
