@@ -97,10 +97,10 @@ AccountsResponse  a = tk.accounts();
 // get some market quotes https://developers.tradeking.com/documentation/market-ext-quotes-get-post
 QuotesResponse  q = tk.quotes(new  String[] {"TWTR", "FB"});
 
-// Get Account History
+// Get Account History https://www.ally.com/api/invest/documentation/accounts-id-history-get/
  HistoryResponse h = tk.history(AllyProperties.ACCOUNT_NO);        
 
-//Get Account Holdings
+//Get Account Holdings https://www.ally.com/api/invest/documentation/accounts-id-holdings-get/
 AccountHoldingsResponse h3 = tk.holdings(AllyProperties.ACCOUNT_NO);
         
 // stream market quotes https://developers.tradeking.com/documentation/streaming-market-quotes-get-post
