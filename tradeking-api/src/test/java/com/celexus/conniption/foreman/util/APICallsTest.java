@@ -58,6 +58,7 @@ public class APICallsTest {
         String optionExpirations = APICall.getOptionExpirations(ResponseFormat.XML);
         String timeSales = APICall.getTimeSales(ResponseFormat.XML);
         String gainers = APICall.getTopList(TopList.GAINERS_ACTIVE, ResponseFormat.XML);
+        String stream = APICall.getStreamingQuote(ResponseFormat.XML);
 
         assertEquals(clock, "https://devapi.invest.ally.com/v1/market/clock.xml");
         assertEquals(quote, "https://devapi.invest.ally.com/v1/market/ext/quotes.xml");
@@ -73,6 +74,7 @@ public class APICallsTest {
         assertEquals(
                 gainers,
                 "https://devapi.invest.ally.com/v1/market/toplists/topactivegainersbydollarvalue.xml");
+        assertEquals(stream, "https://devapi-stream.invest.ally.com/v1/market/quotes.xml");
     }
 
     @Test

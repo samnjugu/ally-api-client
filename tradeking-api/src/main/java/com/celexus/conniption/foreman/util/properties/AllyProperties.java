@@ -11,6 +11,7 @@ public class AllyProperties {
     private static final String OAUTH_TOKEN_KEY = "oauth_token";
     private static final String OAUTH_TOKEN_SECRET_KEY = "oauth_token_secret";
     private static final String ALLY_URL_KEY = "ally_url";
+    private static final String ALLY_STREAM_URL_KEY = "ally_stream_url";
 
     /**
      * Ally Account Number
@@ -42,5 +43,10 @@ public class AllyProperties {
      */
     public static final String ALLY_URL = getProperty(ALLY_PROPERTIES_FILE, ALLY_DEFAULT_PROPERTIES_FILE,
             ALLY_URL_KEY);
+    /**
+     * Ally base url
+     */
+    public static final String ALLY_STREAM_URL = getProperty(ALLY_PROPERTIES_FILE, ALLY_DEFAULT_PROPERTIES_FILE,
+            ALLY_STREAM_URL_KEY);
 
 }

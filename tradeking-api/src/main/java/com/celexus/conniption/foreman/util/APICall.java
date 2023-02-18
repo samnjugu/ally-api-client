@@ -158,7 +158,7 @@ public class APICall implements Serializable {
     }
 
     public static String getStreamingQuote(ResponseFormat format) {
-        return Market.STREAM_EXT_QUOTES.resolveString("", format.toString());
+        return Market.STREAM_QUOTES.resolveString("", format.toString());
     }
 
     /**

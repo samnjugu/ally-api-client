@@ -6,7 +6,7 @@ import com.github.scribejava.core.model.Verb;
 public enum Market {
     CLOCK(baseUrl.url+"/clock", "."),
     EXT_QUOTES(baseUrl.url+"/ext/quotes", "."),
-    STREAM_EXT_QUOTES(baseUrl.url+"/quotes", "."),
+    STREAM_QUOTES(baseUrl.streamUrl+"/quotes", "."),
     NEWS_SEARCH(baseUrl.url+"/news/search", "."),
     NEWS_ID(baseUrl.url+"/news/", "", "."),
     OPTIONS_SEARCH(baseUrl.url+"/options/search", "."),
@@ -49,5 +49,6 @@ public enum Market {
 
     private static class baseUrl{
         private static String url =  AllyProperties.ALLY_URL+"market";
+        private static String streamUrl = AllyProperties.ALLY_STREAM_URL+"market";
     }
 }
